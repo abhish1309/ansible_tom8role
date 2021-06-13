@@ -1,7 +1,0 @@
-
----
-- name: deploy java application
-  get_url:
-    url: https://updates.jenkins-ci.org/download/war/2.297/jenkins.war
-    dest: /opt/tomcat/webapps
-    force_basic_auth: yes
