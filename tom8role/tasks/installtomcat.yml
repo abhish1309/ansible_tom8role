@@ -1,0 +1,15 @@
+- name: download remote files (tomcat)
+  get_url: 
+    url: https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.66/bin/apache-tomcat-8.5.66.tar.gz
+    dest: /home/ubuntu/apache-tomcat-8.5.66.tar.gz
+    force_basic_auth: yes
+
+- name: create a folder
+  file:
+    path: /opt/tomcat
+    state: directory
+
+- name: extract tomcat tar file
+  command:
+    cmd: sudo tar zxvf /home/ubuntu/apache-tomcat-8.5.66.tar.gz -C /opt/tomcat --strip-components=1
+    creates: /opt/tomcat/LICENSE		
